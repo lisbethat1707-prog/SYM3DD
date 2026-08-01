@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VOXEL · Tecnología 3D</title>
-<meta name="description" content="VOXEL — Impresión 3D, escaneo, modelado y prototipado rápido para empresas que necesitan objetos reales, no solo ideas.">
+<title>SYM3D · Fabricación digital e impresión 3D</title>
+<meta name="description" content="SYM3D — Impresión 3D, digitalización 3D + diseño CAD, venta de insumos y repuestos, mantenimiento y capacitación en tecnología 3D. San Martín de Porres, Lima.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -482,6 +482,53 @@
   @media (min-width:1200px){
     .hero-copy h1{ font-size:4rem; }
   }
+
+  /* ---------- Botón flotante de WhatsApp ---------- */
+  .whatsapp-float{
+    position:fixed; right:20px; bottom:20px; z-index:200;
+    width:58px; height:58px; border-radius:50%;
+    background:#25D366;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 12px 26px -8px rgba(37,211,102,0.6);
+    transition:transform .25s ease;
+  }
+  .whatsapp-float:hover{ transform:scale(1.08); }
+  .whatsapp-float svg{ width:28px; height:28px; }
+
+  /* ---------- Insignias hero (reemplazan estadísticas) ---------- */
+  .hero-badges{ display:flex; gap:12px; flex-wrap:wrap; }
+  .hero-badge{
+    display:flex; align-items:center; gap:8px;
+    background:var(--white); border:1px solid #E4E9EE;
+    padding:9px 16px; border-radius:999px;
+    font-family:'Space Grotesk',sans-serif; font-weight:500; font-size:0.85rem;
+  }
+  .hero-badge .dot{ width:8px; height:8px; border-radius:2px; background:var(--grad); transform:rotate(45deg); flex-shrink:0; }
+
+  /* ---------- Testimonios ---------- */
+  .testimonials{ background:var(--gray-light); }
+  .testi-grid{ display:grid; grid-template-columns:1fr; gap:20px; }
+  .testi-card{
+    background:var(--white); border-radius:var(--radius-md);
+    padding:28px 26px; box-shadow:0 12px 30px -20px rgba(11,18,32,0.25);
+  }
+  .testi-stars{ display:flex; gap:4px; margin-bottom:14px; }
+  .testi-stars svg{ width:16px; height:16px; }
+  .testi-quote{ font-family:'Space Grotesk',sans-serif; font-size:1.05rem; font-weight:500; margin-bottom:16px; }
+  .testi-author{ font-size:0.85rem; color:var(--gray-mid); }
+  @media (min-width:900px){ .testi-grid{ grid-template-columns:repeat(3,1fr); } }
+
+  @media (min-width:900px){
+    .services-grid.five{
+      grid-template-columns:repeat(3,1fr);
+      justify-content:center;
+    }
+    .services-grid.five .service-card:nth-child(4),
+    .services-grid.five .service-card:nth-child(5){
+      max-width:100%;
+    }
+    .services-grid.five{ grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); }
+  }
 </style>
 </head>
 <body>
@@ -489,14 +536,14 @@
 <!-- ===== Header ===== -->
 <header>
   <nav class="nav">
-    <a href="#inicio" class="brand" aria-label="VOXEL — inicio">
+    <a href="#inicio" class="brand" aria-label="SYM3D — inicio">
       <svg class="cube-mark" width="34" height="34" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <path d="M20 2L36 11V29L20 38L4 29V11L20 2Z" fill="#F4F6F8"/>
         <path d="M20 2L36 11L20 20L4 11L20 2Z" fill="#FFFFFF"/>
         <path d="M4 11L20 20V38L4 29V11Z" fill="#1595E5"/>
         <path d="M36 11L20 20V38L36 29V11Z" fill="#FF2E63"/>
       </svg>
-      <span class="brand-name">VOXEL</span>
+      <span class="brand-name">SYM3D</span>
     </a>
 
     <ul class="nav-links" id="navLinks">
@@ -529,17 +576,17 @@
 <section class="hero" id="inicio">
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <p class="tagline">Tecnología 3D para ideas reales</p>
+      <p class="tagline">Fabricación digital y tecnología 3D</p>
       <h1>Convertimos ideas en <span class="accent">objetos reales</span></h1>
-      <p>Impresión, escaneo y modelado 3D de precisión para empresas que ya no se conforman con un boceto. Del archivo digital a la pieza en tus manos.</p>
+      <p>En SYM3D ofrecemos soluciones 3D de alta calidad para diferentes industrias: impresión, digitalización, diseño CAD, insumos y soporte técnico especializado.</p>
       <div class="hero-actions">
         <a href="#servicios" class="btn btn-primary">Ver servicios</a>
-        <a href="#contacto" class="btn btn-ghost">Cotizar proyecto</a>
+        <a href="https://wa.me/51987555670" target="_blank" rel="noopener" class="btn btn-ghost">Escríbenos por WhatsApp</a>
       </div>
-      <div class="hero-stats">
-        <div><strong>+350</strong><span>Proyectos entregados</span></div>
-        <div><strong>±0.05mm</strong><span>Precisión de escaneo</span></div>
-        <div><strong>+80</strong><span>Clientes activos</span></div>
+      <div class="hero-badges">
+        <span class="hero-badge"><span class="dot"></span>Tecnología de vanguardia</span>
+        <span class="hero-badge"><span class="dot"></span>Soporte continuo</span>
+        <span class="hero-badge"><span class="dot"></span>Enfoque en la innovación</span>
       </div>
     </div>
 
@@ -579,57 +626,94 @@
   <div class="wrap">
     <div class="section-head reveal">
       <p class="eyebrow">Servicios</p>
-      <h2>Soluciones para cada etapa del proceso</h2>
-      <p>Desde la primera idea hasta la pieza terminada, cubrimos todo el ciclo de la fabricación digital.</p>
+      <h2>Soluciones 3D de alta calidad para diferentes industrias</h2>
+      <p>De la digitalización a la pieza terminada: cubrimos todo el ciclo de la fabricación digital, con soporte técnico en cada etapa.</p>
     </div>
 
-    <div class="services-grid">
+    <div class="services-grid five">
       <div class="service-card reveal">
         <div class="service-icon">
           <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L21 7V17L12 22L3 17V7L12 2Z" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/><path d="M3 7L12 12L21 7M12 12V22" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg>
         </div>
         <h3>Impresión 3D</h3>
-        <p>Piezas funcionales y prototipos de alta resolución en resina, PLA, PETG y nylon técnico.</p>
+        <p>Piezas funcionales y prototipos de alta resolución con equipos de tecnología de vanguardia.</p>
       </div>
 
       <div class="service-card reveal">
         <div class="service-icon">
           <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="3" stroke="#fff" stroke-width="1.6"/><path d="M3 12C3 12 6 5 12 5C18 5 21 12 21 12C21 12 18 19 12 19C6 19 3 12 3 12Z" stroke="#fff" stroke-width="1.6"/></svg>
         </div>
-        <h3>Escaneo 3D</h3>
-        <p>Digitalizamos objetos físicos con precisión submilimétrica para ingeniería inversa.</p>
+        <h3>Digitalización 3D + Diseño CAD</h3>
+        <p>Convertimos objetos físicos en modelos digitales precisos, listos para diseño e ingeniería.</p>
       </div>
 
       <div class="service-card reveal">
         <div class="service-icon">
           <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6H20M4 12H20M4 18H14" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><circle cx="18" cy="18" r="2.4" stroke="#fff" stroke-width="1.6"/></svg>
         </div>
-        <h3>Modelado y diseño</h3>
-        <p>Desarrollamos modelos 3D desde cero, listos para producción o visualización.</p>
+        <h3>Venta de insumos y repuestos 3D</h3>
+        <p>Filamentos, resinas y repuestos originales para mantener tu impresora siempre operativa.</p>
       </div>
 
       <div class="service-card reveal">
         <div class="service-icon">
           <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 2L4 14H12L11 22L20 10H12L13 2Z" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg>
         </div>
-        <h3>Prototipado rápido</h3>
-        <p>De la idea al prototipo funcional en días, no en semanas.</p>
+        <h3>Mantenimiento de impresoras 3D</h3>
+        <p>Servicio técnico especializado para calibración, reparación y prevención de fallas.</p>
       </div>
 
       <div class="service-card reveal">
         <div class="service-icon">
           <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 20V10L12 4L20 10V20H14V14H10V20H4Z" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg>
         </div>
-        <h3>Manufactura aditiva industrial</h3>
-        <p>Producción de piezas técnicas en lotes pequeños y medianos, bajo especificación.</p>
+        <h3>Capacitación en digitalización e impresión 3D</h3>
+        <p>Formamos a tu equipo en el uso de tecnología y procesos de fabricación digital.</p>
       </div>
+    </div>
+  </div>
+</section>
 
-      <div class="service-card reveal">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3V6M12 18V21M3 12H6M18 12H21M5.6 5.6L7.8 7.8M16.2 16.2L18.4 18.4M5.6 18.4L7.8 16.2M16.2 7.8L18.4 5.6" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="12" r="3.2" stroke="#fff" stroke-width="1.6"/></svg>
+<!-- ===== Testimonios ===== -->
+<section class="testimonials">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Testimonios</p>
+      <h2>Lo que dicen quienes ya trabajaron con nosotros</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="testi-stars" aria-hidden="true">
+          <svg viewBox="0 0 20 20" fill="#FF2E63"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6L10 1z"/></svg>
+          <svg viewBox="0 0 20 20" fill="#FF2E63"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6L10 1z"/></svg>
+          <svg viewBox="0 0 20 20" fill="#FF2E63"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6L10 1z"/></svg>
+          <svg viewBox="0 0 20 20" fill="#FF2E63"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6L10 1z"/></svg>
+          <svg viewBox="0 0 20 20" fill="#FF2E63"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6L10 1z"/></svg>
         </div>
-        <h3>Consultoría técnica</h3>
-        <p>Asesoría en materiales, tolerancias y procesos para optimizar tu producción.</p>
+        <p class="testi-quote">"Servicio técnico impecable."</p>
+        <p class="testi-author">Carlos Méndez</p>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars" aria-hidden="true">
+          <svg viewBox="0 0 20 20" fill="#FF2E63"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6L10 1z"/></svg>
+          <svg viewBox="0 0 20 20" fill="#FF2E63"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6L10 1z"/></svg>
+          <svg viewBox="0 0 20 20" fill="#FF2E63"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6L10 1z"/></svg>
+          <svg viewBox="0 0 20 20" fill="#FF2E63"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6L10 1z"/></svg>
+          <svg viewBox="0 0 20 20" fill="#FF2E63"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6L10 1z"/></svg>
+        </div>
+        <p class="testi-quote">"Repuestos originales garantizados."</p>
+        <p class="testi-author">Andrés Alcázar</p>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars" aria-hidden="true">
+          <svg viewBox="0 0 20 20" fill="#FF2E63"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6L10 1z"/></svg>
+          <svg viewBox="0 0 20 20" fill="#FF2E63"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6L10 1z"/></svg>
+          <svg viewBox="0 0 20 20" fill="#FF2E63"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6L10 1z"/></svg>
+          <svg viewBox="0 0 20 20" fill="#FF2E63"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6L10 1z"/></svg>
+          <svg viewBox="0 0 20 20" fill="#FF2E63"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6L10 1z"/></svg>
+        </div>
+        <p class="testi-quote">"Atención rápida, excelente."</p>
+        <p class="testi-author">Mauricio Loli</p>
       </div>
     </div>
   </div>
@@ -640,34 +724,30 @@
   <div class="wrap about-grid">
     <div class="reveal">
       <p class="eyebrow">Nosotros</p>
-      <h2>Un equipo técnico obsesionado con la precisión</h2>
-      <p>Somos VOXEL: ingenieros, diseñadores y operadores de manufactura aditiva que trabajamos como una extensión del equipo técnico de nuestros clientes, no como un proveedor externo más.</p>
-      <p>Cada pieza pasa por control dimensional antes de salir de nuestro taller en Lima. Trabajamos con estudios de arquitectura, marcas de producto y plantas industriales que necesitan resultados repetibles, no aproximaciones.</p>
+      <h2>Somos especialistas en modelado, digitalización e impresión 3D</h2>
+      <p><strong style="color:#fff">Misión:</strong> brindar soluciones integrales en modelado, digitalización e impresión 3D, adaptándonos a las necesidades de cada cliente con conocimiento y experiencia técnica.</p>
+      <p><strong style="color:#fff">Visión:</strong> consolidarnos a nivel nacional como una empresa líder en soluciones 3D, con eficiencia, calidad y profesionalismo.</p>
 
       <div class="about-stats">
-        <div class="about-stat"><strong>6 años</strong><span>De experiencia en manufactura aditiva</span></div>
-        <div class="about-stat"><strong>12</strong><span>Especialistas en el equipo</span></div>
-        <div class="about-stat"><strong>15+</strong><span>Materiales disponibles</span></div>
-        <div class="about-stat"><strong>48h</strong><span>Tiempo de respuesta en cotización</span></div>
+        <div class="about-stat"><strong style="font-size:1.15rem">Tecnología de vanguardia</strong><span>Equipos avanzados para máxima precisión y calidad</span></div>
+        <div class="about-stat"><strong style="font-size:1.15rem">Compromiso con la calidad</strong><span>Resultados que superan los estándares</span></div>
+        <div class="about-stat"><strong style="font-size:1.15rem">Soporte continuo</strong><span>Acompañamiento técnico durante todo el proceso</span></div>
+        <div class="about-stat"><strong style="font-size:1.15rem">Enfoque en la innovación</strong><span>Siempre aplicamos las últimas tecnologías</span></div>
       </div>
     </div>
 
     <div class="about-values reveal">
       <div class="value-row">
         <span class="value-dot" aria-hidden="true"></span>
-        <div><h4>Precisión antes que velocidad</h4><p>Medimos, verificamos y solo después entregamos.</p></div>
+        <div><h4>Integridad</h4><p>Actuamos con transparencia y ética en cada proyecto, garantizando confianza en cada proceso 3D.</p></div>
       </div>
       <div class="value-row">
         <span class="value-dot" aria-hidden="true"></span>
-        <div><h4>Comunicación técnica directa</h4><p>Hablas con quien diseña y fabrica tu pieza, sin intermediarios.</p></div>
+        <div><h4>Compromiso</h4><p>Cumplimos cada objetivo con dedicación, asegurando calidad, precisión y puntualidad en cada entrega.</p></div>
       </div>
       <div class="value-row">
         <span class="value-dot" aria-hidden="true"></span>
-        <div><h4>Procesos documentados</h4><p>Cada proyecto queda registrado para reimprimir o escalar sin fricción.</p></div>
-      </div>
-      <div class="value-row">
-        <span class="value-dot" aria-hidden="true"></span>
-        <div><h4>Materiales certificados</h4><p>Trabajamos solo con proveedores con ficha técnica verificable.</p></div>
+        <div><h4>Respeto</h4><p>Valoramos las ideas, tiempos y necesidades de nuestros clientes, con relaciones basadas en confianza.</p></div>
       </div>
     </div>
   </div>
@@ -676,8 +756,8 @@
 <!-- ===== CTA ===== -->
 <div class="cta-band reveal">
   <h2>¿Tienes un archivo o solo una idea?</h2>
-  <p>Cuéntanos qué necesitas fabricar y te respondemos con una cotización técnica en menos de 48 horas.</p>
-  <a href="#contacto" class="btn btn-primary">Empezar mi proyecto</a>
+  <p>Cuéntanos qué necesitas fabricar, imprimir o digitalizar y te respondemos a la brevedad.</p>
+  <a href="https://wa.me/51987555670" target="_blank" rel="noopener" class="btn btn-primary">Escríbenos al WhatsApp</a>
 </div>
 
 <!-- ===== Contacto ===== -->
@@ -695,25 +775,25 @@
           <div class="contact-info-icon">
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 21C12 21 19 14.6 19 9.5C19 5.9 15.9 3 12 3C8.1 3 5 5.9 5 9.5C5 14.6 12 21 12 21Z" stroke="#1595E5" stroke-width="1.6"/><circle cx="12" cy="9.5" r="2.4" stroke="#1595E5" stroke-width="1.6"/></svg>
           </div>
-          <div><h4>Taller y showroom</h4><p>Av. República de Panamá, Lima, Perú</p></div>
+          <div><h4>Dirección</h4><p>Av. Santa Rosa 1561, San Martín de Porres, Lima</p></div>
         </div>
         <div class="contact-info-item">
           <div class="contact-info-icon">
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6H20V18H4V6Z" stroke="#FF2E63" stroke-width="1.6"/><path d="M4 7L12 13L20 7" stroke="#FF2E63" stroke-width="1.6"/></svg>
           </div>
-          <div><h4>Correo</h4><p>hola@voxel3d.pe</p></div>
+          <div><h4>Correo</h4><p>lisbethat1707@gmail.com</p></div>
         </div>
         <div class="contact-info-item">
           <div class="contact-info-icon">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.5 3H9.5L11 7L8.5 9C9.4 11.2 11.3 13 13.5 14L15.5 12L19.5 13.5V16.5C19.5 17.9 18.3 19 17 18.9C10 18.4 4.6 12.9 4.1 6C4 4.6 5.1 3 6.5 3Z" stroke="#1595E5" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.1.2-.3.2-.6.1-.3-.1-1.2-.4-2.2-1.4-.8-.7-1.4-1.6-1.5-1.9-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.2-.4.1-.2 0-.3 0-.5s-.6-1.5-.9-2.1c-.2-.5-.5-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.7c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.3-.1-.2-.3-.2-.5-.3z" fill="#25D366"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.6 1.4 5.1L2 22l5-1.3C8.4 21.6 10.2 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.6 0-3.1-.4-4.5-1.2l-.3-.2-3 .8.8-2.9-.2-.3C4 15 3.5 13.5 3.5 12c0-4.7 3.8-8.5 8.5-8.5s8.5 3.8 8.5 8.5-3.8 8.5-8.5 8.5z" fill="#25D366"/></svg>
           </div>
-          <div><h4>Teléfono</h4><p>+51 999 123 456</p></div>
+          <div><h4>WhatsApp</h4><p><a href="https://wa.me/51987555670" target="_blank" rel="noopener">987 555 670</a></p></div>
         </div>
         <div class="contact-info-item">
           <div class="contact-info-icon">
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="#FF2E63" stroke-width="1.6"/><path d="M12 7V12L15.5 14" stroke="#FF2E63" stroke-width="1.6" stroke-linecap="round"/></svg>
           </div>
-          <div><h4>Horario</h4><p>Lunes a viernes, 9:00 a.m. – 6:30 p.m.</p></div>
+          <div><h4>Horario de atención</h4><p>Lunes a viernes, 8:00 a.m. – 6:00 p.m.<br>Sábados, 9:00 a.m. – 1:00 p.m.</p></div>
         </div>
       </div>
 
@@ -741,11 +821,10 @@
             <select id="servicio" name="servicio">
               <option value="">Selecciona una opción</option>
               <option value="impresion">Impresión 3D</option>
-              <option value="escaneo">Escaneo 3D</option>
-              <option value="modelado">Modelado y diseño</option>
-              <option value="prototipado">Prototipado rápido</option>
-              <option value="manufactura">Manufactura aditiva industrial</option>
-              <option value="consultoria">Consultoría técnica</option>
+              <option value="digitalizacion">Digitalización 3D + Diseño CAD</option>
+              <option value="insumos">Venta de insumos y repuestos 3D</option>
+              <option value="mantenimiento">Mantenimiento de impresoras 3D</option>
+              <option value="capacitacion">Capacitación en digitalización e impresión 3D</option>
             </select>
           </div>
         </div>
@@ -769,19 +848,20 @@
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="#inicio" class="brand" aria-label="VOXEL — inicio">
+        <a href="#inicio" class="brand" aria-label="SYM3D — inicio">
           <svg class="cube-mark" width="30" height="30" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path d="M20 2L36 11L20 20L4 11L20 2Z" fill="#FFFFFF"/>
             <path d="M4 11L20 20V38L4 29V11Z" fill="#1595E5"/>
             <path d="M36 11L20 20V38L36 29V11Z" fill="#FF2E63"/>
           </svg>
-          <span class="brand-name">VOXEL</span>
+          <span class="brand-name">SYM3D</span>
         </a>
-        <p>Tecnología 3D para ideas reales. Impresión, escaneo y modelado de precisión desde Lima.</p>
+        <p>Tienda especializada en filamentos, impresoras 3D y servicios de fabricación digital de alta precisión.</p>
         <div class="footer-social">
-          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="#fff" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="#fff" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="#fff"/></svg></a>
-          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#fff" stroke-width="1.5"/><path d="M8 10.5V17M8 7.5V7.6M12.5 17V13C12.5 11.6 13.4 10.5 14.7 10.5C16 10.5 16.5 11.6 16.5 13V17" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg></a>
-          <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="none"><path d="M14 3V14.5C14 16.4 12.4 18 10.5 18C8.6 18 7 16.4 7 14.5C7 12.6 8.6 11 10.5 11" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/><path d="M14 3C14 5.2 15.8 7 18 7" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          <a href="https://www.facebook.com/profile.php?id=61586146546034" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none"><path d="M15 8H13.5C12.7 8 12 8.7 12 9.5V12H15L14.5 15H12V21H9V15H7V12H9V9.2C9 6.9 10.7 5 13 5H15V8Z" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></a>
+          <a href="https://www.instagram.com/sym_3d_" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="#fff" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="#fff" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="#fff"/></svg></a>
+          <a href="https://www.tiktok.com/@sym_3d" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="none"><path d="M14 3V14.5C14 16.4 12.4 18 10.5 18C8.6 18 7 16.4 7 14.5C7 12.6 8.6 11 10.5 11" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/><path d="M14 3C14 5.2 15.8 7 18 7" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          <a href="https://wa.me/51987555670" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.6 1.4 5.1L2 22l5-1.3C8.4 21.6 10.2 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2z" stroke="#fff" stroke-width="1.5"/></svg></a>
         </div>
       </div>
 
@@ -799,27 +879,31 @@
         <h4>Servicios</h4>
         <ul>
           <li><a href="#servicios">Impresión 3D</a></li>
-          <li><a href="#servicios">Escaneo 3D</a></li>
-          <li><a href="#servicios">Modelado y diseño</a></li>
-          <li><a href="#servicios">Prototipado rápido</a></li>
+          <li><a href="#servicios">Digitalización 3D + Diseño CAD</a></li>
+          <li><a href="#servicios">Insumos y repuestos 3D</a></li>
+          <li><a href="#servicios">Mantenimiento de impresoras</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
         <h4>Contacto</h4>
         <ul>
-          <li><a href="mailto:hola@voxel3d.pe">hola@voxel3d.pe</a></li>
-          <li><a href="tel:+51999123456">+51 999 123 456</a></li>
-          <li><a href="#contacto">Lima, Perú</a></li>
+          <li><a href="mailto:lisbethat1707@gmail.com">lisbethat1707@gmail.com</a></li>
+          <li><a href="https://wa.me/51987555670" target="_blank" rel="noopener">WhatsApp: 987 555 670</a></li>
+          <li><a href="#contacto">Av. Santa Rosa 1561, San Martín de Porres</a></li>
         </ul>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <span>© 2026 VOXEL. Todos los derechos reservados.</span>
+      <span>© 2026 SYM3D Perú. Todos los derechos reservados.</span>
     </div>
   </div>
 </footer>
+
+<a href="https://wa.me/51987555670" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Escríbenos por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.1.2-.3.2-.6.1-.3-.1-1.2-.4-2.2-1.4-.8-.7-1.4-1.6-1.5-1.9-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.2-.4.1-.2 0-.3 0-.5s-.6-1.5-.9-2.1c-.2-.5-.5-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.7c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.3-.1-.2-.3-.2-.5-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.6 1.4 5.1L2 22l5-1.3C8.4 21.6 10.2 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.6 0-3.1-.4-4.5-1.2l-.3-.2-3 .8.8-2.9-.2-.3C4 15 3.5 13.5 3.5 12c0-4.7 3.8-8.5 8.5-8.5s8.5 3.8 8.5 8.5-3.8 8.5-8.5 8.5z"/></svg>
+</a>
 
 <script>
 (function(){
